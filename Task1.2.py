@@ -13,12 +13,7 @@ gadgets = [
 ]
 
 
-def sort_key(gadget):
-    product_name, quantity, in_stock = gadget
-    return (not in_stock, -quantity, product_name)
-
-
-sorted_gadgets = sorted(gadgets, key=sort_key)
+sorted_gadgets = sorted(gadgets, key=lambda gadget: (not gadget[2], -gadget[1], gadget[0]))
 
 
 for gadget in sorted_gadgets:
